@@ -85,7 +85,7 @@ animLoop(function() {
   var linksCoordinates = [];
 
   // Engines
-  ctx.strokeStyle = 'rgba(255,255,255,.5)';
+  ctx.strokeStyle = 'rgba(125,127,125,.8)';
   ctx.lineWidth = 2;
   engines.forEach(function(engine) {
     var posX = engine.x + (engine.r * Math.cos(engine.a)),
@@ -97,8 +97,8 @@ animLoop(function() {
     ctx.closePath();
     ctx.stroke();
 
-    drawDot(engine.x, engine.y, 'rgba(255,255,255,.5)', ctx);
-    drawDot(posX, posY, 'rgba(255,255,255,.5)', ctx);
+    drawDot(engine.x, engine.y, 'rgba(125,127,125,.9)', ctx);
+    drawDot(posX, posY, 'rgba(125,127,125,.9)', ctx);
 
     engine.a += engine.s;
 
@@ -126,7 +126,7 @@ animLoop(function() {
       end = points[index + 1] || points[0];
     var midX = (start.x + end.x) / 2,
       midY = (start.y + end.y) / 2;
-    drawDot(midX, midY, 'red', ctx);
+    drawDot(midX, midY, 'green', ctx);
     drawDot(midX, midY, getTrailColor(), trailCtx);
   });
 });

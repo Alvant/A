@@ -1,5 +1,9 @@
+@-ms-viewport{
+  width: device-width;
+}
+
 body {
-  background: RGB(19, 19, 19);
+  background: RGB(248, 244, 255);
 }
 
 #engines, #trails {
@@ -12,9 +16,9 @@ body {
   position: fixed;
   top: 100px;
   right: 600px;
-  color: RGB(245, 245, 245);
-  font-family: "Georgia", "Times New Roman", serif;
-  font-style: italic;
+  color: RGB(26, 21, 63);
+  /*font-family: "Georgia", "Times New Roman", serif;*/
+  /*font-style: italic;*/
   font-size: 5em;
   line-height: 0.3;
 }

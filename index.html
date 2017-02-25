@@ -2,8 +2,26 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Little flower</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>8 M 2017</title>
   <link rel="stylesheet" href="css/style.css">
+  <style type="text/css">
+		@font-face {
+      font-family: "PT Serif Italic";
+      src: url("./common/fonts/PT_Serif/PT_Serif-Web-Italic.ttf");
+    }
+		.pt-serif-italic {
+			font-family: PT Serif Italic;
+		}
+		@font-face {
+      font-family: "Neucha";
+      src: url("./common/fonts/Neucha/Neucha.ttf");
+    }
+		.neucha {
+			font-family: Neucha;
+		}
+	</style>
 </head>
 
 <body>
@@ -12,9 +30,9 @@
     <canvas id="trails" width="600" height="600"></canvas>
   </div>
   
-  <div id="wish">
+  <div id="wish" class="pt-serif-italic">
     <p>С 8 марта,</p>
-    <p id="name">Алеся</p>
+    <p style="padding-right:0.5em;">Алеся</p>
   </div>
   
   <script src="js/index.js"></script>
