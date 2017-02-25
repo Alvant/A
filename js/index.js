@@ -4,10 +4,15 @@ var trailCanvas = document.querySelector("#trails"),
   trailCtx = trailCanvas.getContext('2d');
 
 var factor = 0.5;
-/*var len = Math.min(factor * window.innerWidth, factor * window.innerHeight);*/
+//var len = Math.min(factor * window.innerWidth, factor * window.innerHeight);
+
+//document.documentElement.clientWidth
+//parent.document.documentElement.client - ?
+
 var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 var len = factor * Math.min(w, h);
+var dotR = 3;
 
 ctx.canvas.width = len;
 ctx.canvas.height = len;
@@ -36,7 +41,7 @@ function drawDot(x, y, color, ctx) {
   ctx.save();
   ctx.fillStyle = color;
   ctx.beginPath();
-  ctx.arc(x, y, 3, 0, 2 * Math.PI, false);
+  ctx.arc(x, y, dotR, 0, 2 * Math.PI, false);
   ctx.fill();
   ctx.closePath();
   ctx.restore();
@@ -63,8 +68,8 @@ var r2 = 1.5 * r1;
 
 // 5 petals flower
 var engines = [
-  {x: r1, y: r1, r: r1, a: (3 * Math.PI / 4), s: (Math.PI / 200)},
-  {x: (len - r2), y: (len - r2), r: r2, a: (-Math.PI / 4), s: (-Math.PI / 50)}
+  {x: r1 + dotR, y: r1 + dotR, r: r1, a: (3 * Math.PI / 4), s: (Math.PI / 200)},
+  {x: (len - r2 - dotR), y: (len - r2 - dotR), r: r2, a: (-Math.PI / 4), s: (-Math.PI / 50)}
 ];
 
 /*var engines = [

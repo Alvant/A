@@ -1,41 +1,43 @@
-@-ms-viewport{
-  width: device-width;
-}
-
+@-ms-viewport {
+  width: device-width; }
 html, body {
   width: 100%;
   height: 100%;
-  margin: 0px;
-}
+  margin: 0px; }
 
 body {
-  background: RGB(248, 244, 255);
-}
+  background: RGB(248, 244, 255); }
 
 #engines, #trails {
   position: absolute;
-  bottom: 0%;
-  left: 30%;
-}
-
-/*
-#flower {
-  border: 2px solid black;
-}
-*/
+  bottom: 0;
+  left: 0; }
 
 #wish {
   position: absolute;
-  top: 15%;
-  right: 35%;
+  bottom: 50%;
+  right: 0;
   color: RGB(26, 21, 63);
-  /*font-family: "Georgia", "Times New Roman", serif;*/
-  /*font-style: italic;*/
-  /*font-size: 500%;*/
+  /*font-family: "Georgia", "Times New Roman", serif */
+  /*font-style: italic */
+  /*font-size: 500% */
   font-size: 10vmin;
-  line-height: 30%;
-}
+  line-height: 30%; }
+  #wish p {
+    text-align: right; }
 
-#wish p {
-  text-align: right;
-}
+#frame {
+  position: absolute;
+  width: 100vmin;
+  height: 100vmin; }
+
+@media all and (orientation: landscape) {
+  #frame {
+    bottom: 0;
+    left: calc(50vmax + -50vmin); } }
+@media all and (orientation: portrait) {
+  #frame {
+    left: 0;
+    top: calc(50vmax + -50vmin); } }
+
+/*# sourceMappingURL=style.css.map */
