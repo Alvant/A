@@ -2,15 +2,27 @@
   width: device-width;
 }
 
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+}
+
 body {
   background: RGB(248, 244, 255);
 }
 
 #engines, #trails {
   position: absolute;
-  bottom: -20%;
-  left: 15%;
+  bottom: 0%;
+  left: 30%;
 }
+
+/*
+#flower {
+  border: 2px solid black;
+}
+*/
 
 #wish {
   position: absolute;

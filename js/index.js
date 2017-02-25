@@ -3,6 +3,14 @@ var canvas = document.querySelector('#engines'),
 var trailCanvas = document.querySelector("#trails"),
   trailCtx = trailCanvas.getContext('2d');
 
+var factor = 0.5;
+var len = Math.min(factor * window.innerWidth, factor * window.innerHeight);
+
+ctx.canvas.width = len;
+ctx.canvas.height = len;
+trailCtx.canvas.width = len;
+trailCtx.canvas.height = len;
+
 function animLoop(render) {
   var running, lastFrame = +new Date;
   window.requestAnimFrame = (function() {
@@ -47,11 +55,19 @@ var getTrailColor = (function() {
   };
 })();
 
+var r1 = len / 5.0;
+var r2 = 1.5 * r1;
+
 // 5 petals flower
 var engines = [
-  {x: 250, y: 75, r: 60, a: 3 * Math.PI / 4, s: Math.PI / 200},
-  {x: 350, y: 300, r: 100, a: -Math.PI / 4, s: -Math.PI / 50}
+  {x: r1, y: r1, r: r1, a: (3 * Math.PI / 4), s: (Math.PI / 200)},
+  {x: (len - r2), y: (len - r2), r: r2, a: (-Math.PI / 4), s: (-Math.PI / 50)}
 ];
+
+/*var engines = [
+  {x: r1, y: r1, r: r1, a: (3 * Math.PI / 4), s: (Math.PI / 200)},
+  {x: (radius + 100), y: (radius + 225), r: (radius * 5 / 3), a: (-Math.PI / 4), s: (-Math.PI / 50)}
+];*/
 
 // 8 petals
 /*var engines = [
@@ -126,7 +142,7 @@ animLoop(function() {
       end = points[index + 1] || points[0];
     var midX = (start.x + end.x) / 2,
       midY = (start.y + end.y) / 2;
-    drawDot(midX, midY, 'green', ctx);
+    drawDot(midX, midY, 'rgba(18,10,143,.9)', ctx);
     drawDot(midX, midY, getTrailColor(), trailCtx);
   });
 });
