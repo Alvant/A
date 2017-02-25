@@ -47,19 +47,29 @@ function drawDot(x, y, color, ctx) {
   ctx.restore();
 };
 
+function drawMDot(x, y, color, ctx) {
+  ctx.save();
+  ctx.fillStyle = color;
+  ctx.beginPath();
+  ctx.arc(x, y, dotR+2, 0, 2 * Math.PI, false);
+  ctx.fill();
+  ctx.closePath();
+  ctx.restore();
+};
+
 var getTrailColor = (function() {
-  //var blue = 200,
-  var blue = 150,
+  //var blue = 150 -- to 50,
+  var blue = 174,
     dir = -1;
   return function() {
     blue += dir;
-    if (blue === 50) {
+    if (blue === 74) {
       dir = 1;
-    } else if (blue === 150) {
+    } else if (blue === 174) {
       dir = -1;
     }
-    return 'rgba(102,0,' + blue + ',.9)';
-    //return 'rgba(255,105,' + blue + ',.5)';
+    return 'rgba(104, 55,' + blue + ',1)';
+    //return 'rgba(102,0,' + blue + ',.9)';
   };
 })();
 
@@ -150,7 +160,7 @@ animLoop(function() {
       end = points[index + 1] || points[0];
     var midX = (start.x + end.x) / 2,
       midY = (start.y + end.y) / 2;
-    drawDot(midX, midY, 'rgba(18,10,143,.9)', ctx);
+    drawMDot(midX, midY, 'rgba(36, 9, 53, 1)', ctx); //'rgba(18,10,143,.9)'
     drawDot(midX, midY, getTrailColor(), trailCtx);
   });
 });
