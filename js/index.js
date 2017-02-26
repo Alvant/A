@@ -3,7 +3,7 @@ var canvas = document.querySelector('#engines'),
 var trailCanvas = document.querySelector("#trails"),
   trailCtx = trailCanvas.getContext('2d');
 
-var factor = 0.5;
+var factor = 0.7;
 //var len = Math.min(factor * window.innerWidth, factor * window.innerHeight);
 
 //document.documentElement.clientWidth
@@ -12,7 +12,7 @@ var factor = 0.5;
 var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 var len = factor * Math.min(w, h);
-var dotR = 3;
+var dotR = len / 180;
 
 ctx.canvas.width = len;
 ctx.canvas.height = len;
@@ -51,7 +51,7 @@ function drawMDot(x, y, color, ctx) {
   ctx.save();
   ctx.fillStyle = color;
   ctx.beginPath();
-  ctx.arc(x, y, dotR+2, 0, 2 * Math.PI, false);
+  ctx.arc(x, y, 1.5 * dotR, 0, 2 * Math.PI, false);
   ctx.fill();
   ctx.closePath();
   ctx.restore();
@@ -120,7 +120,7 @@ animLoop(function() {
 
   // Engines
   ctx.strokeStyle = 'rgba(125,127,125,.8)';
-  ctx.lineWidth = 2;
+  ctx.lineWidth = 0.5 * dotR;
   engines.forEach(function(engine) {
     var posX = engine.x + (engine.r * Math.cos(engine.a)),
       posY = engine.y + (engine.r * Math.sin(engine.a));
