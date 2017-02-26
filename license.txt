@@ -1,1 +1,2 @@
-The flower made by Patrick Brosset (http://codepen.io/captainbrosset/pen/sKjrF)
+The original flower is made by Patrick Brosset (http://codepen.io/captainbrosset/pen/sKjrF).
+Some minor changes are due to Alvant.
