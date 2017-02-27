@@ -4,10 +4,8 @@ var trailCanvas = document.querySelector("#trails"),
   trailCtx = trailCanvas.getContext('2d');
 
 var factor = 0.7;
-//var len = Math.min(factor * window.innerWidth, factor * window.innerHeight);
 
-//document.documentElement.clientWidth
-//parent.document.documentElement.client - ?
+// document.documentElement.clientWidth OR parent.document.documentElement.client ?
 
 var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
