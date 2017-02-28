@@ -49,7 +49,7 @@ function drawMDot(x, y, color, ctx) {
   ctx.save();
   ctx.fillStyle = color;
   ctx.beginPath();
-  ctx.arc(x, y, 1.5 * dotR, 0, 2 * Math.PI, false);
+  ctx.arc(x, y, 1.7 * dotR, 0, 2 * Math.PI, false);
   ctx.fill();
   ctx.closePath();
   ctx.restore();
@@ -118,7 +118,7 @@ animLoop(function() {
 
   // Engines
   ctx.strokeStyle = 'rgba(125,127,125,.8)';
-  ctx.lineWidth = 0.5 * dotR;
+  ctx.lineWidth = 0.25 * dotR;
   engines.forEach(function(engine) {
     var posX = engine.x + (engine.r * Math.cos(engine.a)),
       posY = engine.y + (engine.r * Math.sin(engine.a));
