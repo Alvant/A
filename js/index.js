@@ -76,8 +76,8 @@ var r2 = 1.5 * r1;
 
 // 5 petals flower
 var engines = [
-  {x: r1 + dotR, y: r1 + dotR, r: r1, a: (3 * Math.PI / 4), s: (Math.PI / 200)},
-  {x: (len - r2 - dotR), y: (len - r2 - dotR), r: r2, a: (-Math.PI / 4), s: (-Math.PI / 50)}
+  {x: r1 + 2*dotR, y: r1 + 2*dotR, r: r1, a: (3 * Math.PI / 4), s: (Math.PI / 200)},
+  {x: (len - r2 - 2*dotR), y: (len - r2 - 2*dotR), r: r2, a: (-Math.PI / 4), s: (-Math.PI / 50)}
 ];
 
 /*var engines = [
