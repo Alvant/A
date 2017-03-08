@@ -3,7 +3,7 @@ var canvas = document.querySelector('#engines'),
 var trailCanvas = document.querySelector("#trails"),
   trailCtx = trailCanvas.getContext('2d');
 
-var factor = 0.7;
+var factor = 0.70;
 
 // document.documentElement.clientWidth OR parent.document.documentElement.client ?
 
